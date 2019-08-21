@@ -18,14 +18,15 @@ def check_weather(url, d):
     temp_max = temp[0].span.string
     temp_min = temp[2].span.string
 
-    print('天気:{}'.format(weather))
-    print('最高気温:{}'.format(temp_max))
-    print('最低気温:{}'.format(temp_min))
-    print('')
+    return '天気:{}\n最高気温:{}\n最低気温:{}'.format(weather, temp_max, temp_min)
+
 # 浦添市の天気のURL
 url = 'https://tenki.jp/forecast/10/50/9110/47208'
 
-print('今日--------------------')
-check_weather(url, 'today')
-print('明日--------------------')
-check_weather(url, 'tomorrow')
+f = open('weather.txt', 'w')
+f.write('浦添市-------------------\n今日の天気\n')
+f.write(check_weather(url, 'today'))
+f.write('\n明日の天気\n')
+f.write(check_weather(url, 'tomorrow'))
+f.write('\n')
+f.close()
