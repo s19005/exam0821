@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+# 今日と明日の天気を調べる
 
 def check_weather(url, d):
     # 引数dで今日(today)か明日(tomorrow)の天気のどちらかを選べる
