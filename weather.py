@@ -25,9 +25,5 @@ def check_weather(url, d):
 url = 'https://tenki.jp/forecast/10/50/9110/47208'
 
 f = open('weather.txt', 'w')
-f.write('浦添市-------------------\n今日の天気\n')
-f.write(check_weather(url, 'today'))
-f.write('\n明日の天気\n')
-f.write(check_weather(url, 'tomorrow'))
-f.write('\n')
+f.write('浦添市-------------------\n今日の天気\n{}\n明日の天気\n{}\n'.format(check_weather(url, 'today'), check_weather(url, 'tomorrow')))
 f.close()
